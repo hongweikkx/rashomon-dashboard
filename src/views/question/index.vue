@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import {getQuestions, likeAnswer, getlikelist} from "@/api/question";
+import {getQuestions, likeAnswer, getlikelist, searchAnswer} from "@/api/question";
 export default {
   data() {
     return {
@@ -104,7 +104,7 @@ export default {
       this.brandFold = !this.brandFold
     },
     searchHandler() {
-      getQuestions().then(response => {
+      searchAnswer().then(response => {
         this.searchList = response.data.answers
       })
       this.activeName = 'search'
